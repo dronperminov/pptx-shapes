@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pptx-shapes"
+authors = [
+  {name = "Andrew Perminov", email = "dronperminov@gmail.com"}
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "lxml>=3.1.0"
+]
+description = "Python library for adding basic geometric shapes directly to PowerPoint (.pptx) slides by editing the XML structure."
+keywords = ["powerpoint", "pptx", "xml", "shape", "geometry", "line", "rectangle", "polygon", "ellipse", "text"]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.8"
+version="0.1.1"
+
+[project.urls]
+Homepage = "https://github.com/dronperminov/pptx-shapes"
+Repository = "https://github.com/dronperminov/pptx-shapes"
+Issues = "https://github.com/dronperminov/pptx-shapes/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pptx_shapes"]

@@ -1,0 +1,11 @@
+[flake8]
+
+max-line-length = 175
+max-complexity = 10
+inline-quotes = "
+
+application-import-names = pptx_shapes
+import-order-style = pycharm
+
+exclude = .git, __pycache__, .idea
+ignore = ANN101

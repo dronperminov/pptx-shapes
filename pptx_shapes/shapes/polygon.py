@@ -1,0 +1,70 @@
+import math
+from dataclasses import dataclass
+from typing import List, Optional, Tuple
+
+from lxml import etree
+
+from pptx_shapes import units
+from pptx_shapes.entities.bbox import BBox
+from pptx_shapes.entities.namespace_helper import NamespaceHelper
+from pptx_shapes.shapes.shape import Shape
+from pptx_shapes.style.fill_style import FillStyle
+from pptx_shapes.style.stroke_style import StrokeStyle
+
+
+@dataclass
+class Polygon(Shape):
+    points: List[Tuple[float, float]]
+    angle: float = 0
+    fill: Optional[FillStyle] = None
+    stroke: Optional[StrokeStyle] = None
+
+    def to_xml(self, shape_id: int, ns_helper: NamespaceHelper) -> etree.Element:
+        node = ns_helper.element("p:sp")
+        xs, ys = [x for x, _ in self.points], [y for _, y in self.points]
+        x_min, y_min, x_max, y_max = min(xs), min(ys), max(xs), max(ys)
+
+        nvsppr = ns_helper.element("p:nvSpPr", parent=node)
+        ns_helper.element("p:cNvPr", {"id": str(shape_id), "name": f"Polygon {shape_id}"}, parent=nvsppr)
+        ns_helper.element("p:cNvSpPr", parent=nvsppr)
+        ns_helper.element("p:nvPr", parent=nvsppr)
+
+        sppr = ns_helper.element("p:spPr", parent=node)
+        sppr.append(self.make_xfrm(ns_helper, {"rot": units.angle_to_unit(self.angle)}, x=x_min, y=y_min, width=x_max - x_min, height=y_max - y_min))
+
+        cust_geom = ns_helper.element("a:custGeom", parent=sppr)
+        ns_helper.element("a:avLst", parent=cust_geom)
+        ns_helper.element("a:ahLst", parent=cust_geom)
+        ns_helper.element("a:rect", {"b": "b", "l": "l", "r": "r", "t": "t"}, parent=cust_geom)
+
+        path = ns_helper.element("a:path", {"w": units.cm_to_emu(x_max - x_min), "h": units.cm_to_emu(y_max - y_min)}, parent=ns_helper.element("a:pathLst", parent=cust_geom))
+        for i, (px, py) in enumerate(self.points):
+            to = ns_helper.element("a:moveTo" if i == 0 else "a:lnTo", parent=path)
+            ns_helper.element("a:pt", {"x": units.cm_to_emu(px - x_min), "y": units.cm_to_emu(py - y_min)}, parent=to)
+        ns_helper.element("a:close", parent=path)
+
+        if self.fill:
+            sppr.append(self.fill.to_xml(ns_helper))
+
+        if self.stroke:
+            sppr.append(self.stroke.to_xml(ns_helper))
+
+        return node
+
+    def bbox(self) -> BBox:
+        angle = self.angle / 180 * math.pi
+        cx = sum(x for x, _ in self.points) / len(self.points)
+        cy = sum(y for _, y in self.points) / len(self.points)
+
+        x_min = x_max = cx
+        y_min = y_max = cy
+
+        for px, py in self.points:
+            dx, dy = px - cx, py - cy
+            x = cx + dx * math.cos(angle) - dy * math.sin(angle)
+            y = cy + dx * math.sin(angle) + dy * math.cos(angle)
+
+            x_min, y_min = min(x_min, x), min(y_min, y)
+            x_max, y_max = max(x_max, x), max(y_max, y)
+
+        return BBox(x=x_min, y=y_min, width=x_max - x_min, height=y_max - y_min)
