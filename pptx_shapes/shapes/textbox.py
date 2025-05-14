@@ -98,6 +98,9 @@ class TextBox(Shape):
             r = ns_helper.element("a:r", parent=p)
             rpr = ns_helper.element("a:rPr", {"smtClean": "0", **text_attributes}, parent=r)
 
+            if self.style.family != "Calibri":
+                ns_helper.element("a:latin", {"typeface": self.style.family}, parent=rpr)
+
             ns_helper.element("a:srgbClr", {"val": units.parse_color(self.style.color)}, parent=ns_helper.element("a:solidFill", parent=rpr))
             ns_helper.element("a:t", parent=r).text = paragraph
             ns_helper.element("a:endParaRPr", text_attributes, parent=p)

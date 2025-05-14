@@ -51,6 +51,21 @@ with Presentation(presentation_path="empty.pptx") as presentation:
 ```
 
 
+## How it works
+
+This library modifies `.pptx` files by directly editing the underlying XML structure.
+
+A `.pptx` presentation is essentially a ZIP archive containing XML files that describe slides, layouts, and content. This library works by:
+
+* Unzipping the `.pptx` file.
+* Locating and parsing the target slide file (e.g., `ppt/slides/slide1.xml`).
+* Inserting new shape elements into the slide's XML tree, using tags like `<p:sp>`, `<p:cxnSp>`, and `<a:prstGeom>`.
+* Saving the modified XML.
+* Repacking all files into a `.pptx` archive.
+
+This low-level approach is ideal for automated slide generation, data visualizations, and geometric illustrations –
+especially when you need to create many shapes or apply programmatic styles.
+
 ## Supported Shapes
 
 Currently, `pptx-shapes` supports the following geometric shapes:
@@ -286,6 +301,7 @@ Defines the font style for text shape (`TextBox`). This includes font size, colo
 ```python
 FontStyle(
     size=14,
+    family="Calibri",
     color="#000000",
     align=Align.CENTER,
     vertical_align=VerticalAlign.CENTER
@@ -376,7 +392,7 @@ All examples include screenshots, downloadable .pptx files, and links to the cor
 
 ### Example 1. Basic shapes
 
-A simple demonstration of how to draw basic geometric elements — lines, ellipses, rectangles, polygons, arrows and text — on a blank slide
+A simple demonstration of how to draw basic geometric elements – lines, ellipses, rectangles, polygons, arrows and text – on a blank slide
 ([examples/basic.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.py)).
 
 ![Basic slide](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
@@ -396,7 +412,7 @@ Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-sha
 
 ### Example 3. Histograms
 
-Bar-style visualizations built using rectangles — this example illustrates how to construct a histogram layout with custom colors
+Bar-style visualizations built using rectangles – this example illustrates how to construct a histogram layout with custom colors
 ([examples/histogram.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.py)).
 
 ![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/histograms.png)
@@ -406,12 +422,22 @@ Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-s
 
 ### Example 4. Polygons split
 
-A more advanced use case — splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
+A more advanced use case – splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
 ([examples/polygons.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.py)).
 
 ![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/polygons.png)
 
 Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
+
+
+### Example 5. Font families and text styles
+
+This example demonstrates how to use different font families and styles in `TextBox` shapes. It shows how to customize font size, alignment, color, and the font family.
+([examples/text_boxes.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.py)).
+
+![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/text_boxes.png)
+
+Download .pptx: [examples/text_boxes.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.pptx)
 
 
 ## Changelog

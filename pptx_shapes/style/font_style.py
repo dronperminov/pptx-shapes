@@ -7,5 +7,6 @@ from pptx_shapes.enums import Align, VerticalAlign
 class FontStyle:
     size: float = 14
     color: str = "#000000"
+    family: str = "Calibri"
     align: Align = Align.CENTER
     vertical_align: VerticalAlign = VerticalAlign.CENTER

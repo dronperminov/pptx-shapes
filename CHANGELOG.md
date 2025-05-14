@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 (2025-05-14)
+
+- Added `family` field to `FontStyle` for specifying font family (default: `"Calibri"`)
+- New example: `text_boxes.py` showcasing different font families and text styles
+
+
 ## 0.1.3 (2025-05-14)
 
 ### Added
