@@ -25,12 +25,13 @@ keywords = ["powerpoint", "pptx", "xml", "shape", "geometry", "line", "rectangle
 license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">=3.8"
-version="0.1.1"
+version="0.1.2"
 
 [project.urls]
 Homepage = "https://github.com/dronperminov/pptx-shapes"
 Repository = "https://github.com/dronperminov/pptx-shapes"
 Issues = "https://github.com/dronperminov/pptx-shapes/issues"
+Changelog = "https://github.com/dronperminov/pptx-shapes/blob/master/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["."]
