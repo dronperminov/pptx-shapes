@@ -26,7 +26,6 @@ from pptx_shapes import Presentation
 from pptx_shapes.shapes import Ellipse, Rectangle, TextBox
 from pptx_shapes.style import FillStyle, FontFormat, FontStyle, StrokeStyle
 
-
 with Presentation(presentation_path="empty.pptx") as presentation:
     presentation.add(shape=TextBox(
         x=23, y=4, width=12, height=2, angle=45,
@@ -291,6 +290,51 @@ Margin(
 
 These formatting classes allow you to fine-tune the appearance of shapes and text on your slides. You can apply custom fills, strokes, fonts, and margins to make the presentation
 visually appealing and precise.
+
+
+## Examples
+
+The following examples illustrate how to generate PowerPoint slides with various geometric shapes using `python-shapes`.
+All examples include screenshots, downloadable .pptx files, and links to the corresponding source code.
+
+### Example 1. Basic shapes
+
+A simple demonstration of how to draw basic geometric elements — lines, ellipses, rectangles, polygons, arrows and text — on a blank slide
+([examples/basic.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.py)).
+
+![Basic slide](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.png)
+
+Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.pptx)
+
+
+### Example 2. Scatter plots
+
+This example shows how to render a scatter plot using ellipses as data points, demonstrating precise positioning and styling
+([examples/scatter.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.py)).
+
+![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.png)
+
+Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.pptx)
+
+
+### Example 3. Histograms
+
+Bar-style visualizations built using rectangles — this example illustrates how to construct a histogram layout with custom colors
+([examples/histogram.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.py)).
+
+![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.png)
+
+Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.pptx)
+
+
+### Example 4. Polygons split
+
+A more advanced use case — splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
+([examples/polygons.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.py)).
+
+![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.png)
+
+Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
 
 
 ## License
