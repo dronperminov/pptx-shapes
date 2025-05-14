@@ -1,4 +1,3 @@
-import math
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
@@ -52,19 +51,4 @@ class Polygon(Shape):
         return node
 
     def bbox(self) -> BBox:
-        angle = self.angle / 180 * math.pi
-        cx = sum(x for x, _ in self.points) / len(self.points)
-        cy = sum(y for _, y in self.points) / len(self.points)
-
-        x_min = x_max = cx
-        y_min = y_max = cy
-
-        for px, py in self.points:
-            dx, dy = px - cx, py - cy
-            x = cx + dx * math.cos(angle) - dy * math.sin(angle)
-            y = cy + dx * math.sin(angle) + dy * math.cos(angle)
-
-            x_min, y_min = min(x_min, x), min(y_min, y)
-            x_max, y_max = max(x_max, x), max(y_max, y)
-
-        return BBox(x=x_min, y=y_min, width=x_max - x_min, height=y_max - y_min)
+        return BBox.from_points(points=self.points, angle=self.angle)

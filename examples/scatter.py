@@ -62,14 +62,14 @@ def main() -> None:
 
     with Presentation(presentation_path="empty.pptx") as presentation:
         presentation.add(shape=Group(shapes=[
-            Group([Ellipse(x=x, y=y, dx=0.2, dy=0.2, fill=FillStyle(color="#dd7373"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in gaussian_points1]),
-            Group([Ellipse(x=x, y=y, dx=0.2, dy=0.2, fill=FillStyle(color="#7699d4"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in gaussian_points2]),
+            Group([Ellipse(x=x, y=y, width=0.2, height=0.2, fill=FillStyle(color="#dd7373"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in gaussian_points1]),
+            Group([Ellipse(x=x, y=y, width=0.2, height=0.2, fill=FillStyle(color="#7699d4"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in gaussian_points2]),
             Rectangle(x=x0, y=y0, width=width, height=height, stroke=StrokeStyle(color="#222"), radius=0.1)
         ]))
 
         presentation.add(shape=Group(shapes=[
-            Group([Ellipse(x=x, y=y, dx=0.2, dy=0.2, fill=FillStyle(color="#dd7373"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in spiral1]),
-            Group([Ellipse(x=x, y=y, dx=0.2, dy=0.2, fill=FillStyle(color="#7699d4"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in spiral2]),
+            Group([Ellipse(x=x, y=y, width=0.2, height=0.2, fill=FillStyle(color="#dd7373"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in spiral1]),
+            Group([Ellipse(x=x, y=y, width=0.2, height=0.2, fill=FillStyle(color="#7699d4"), stroke=StrokeStyle(color="#fff", thickness=0.5)) for x, y in spiral2]),
             Rectangle(x=x0 + width + 2, y=y0, width=width, height=height, stroke=StrokeStyle(color="#222"), radius=0.1)
         ]))
 

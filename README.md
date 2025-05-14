@@ -37,7 +37,7 @@ with Presentation(presentation_path="empty.pptx") as presentation:
     ))
 
     presentation.add(shape=Ellipse(
-        x=20, y=2, dx=4, dy=4,
+        x=20, y=2, width=4, height=4,
         fill=FillStyle(color="#7699d4")
     ))
 
@@ -74,9 +74,11 @@ Currently, `pptx-shapes` supports the following geometric shapes:
 |------------------------------------------------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
 | [Line](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/line.py)           | `Line`      | Straight line between two points                                             |
 | [Arrow](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arrow.py)         | `Arrow`     | Straight arrow between two points                                            |
-| [Arc](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arc.py)             | `Arc`       | Curved segment defined by the bounding box and start/end angles.             |
-| [Ellipse](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/ellipse.py)     | `Ellipse`   | Ellipse defined by top-left corner, diameters, and rotation angle            |
+| [Arc](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arc.py)             | `Arc`       | Curved segment defined by the bounding box and start/end angles              |
+| [Arch](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arch.py)           | `Arch`      | Ring-shaped arc defined by the bounding box, thickness and start/end angles  |
+| [Ellipse](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/ellipse.py)     | `Ellipse`   | Ellipse defined by top-left corner, size, and rotation angle                 |
 | [Rectangle](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/rectangle.py) | `Rectangle` | Rectangle defined by top-left corner, size, corner radius and rotation angle |
+| [Pie](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/pie.py)             | `Pie`       | Filled sector of a circle, defined by the bounding box and start/end angles  |
 | [Polygon](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polygon.py)     | `Polygon`   | Arbitrary polygon defined by a list of points and rotation angle             |
 | [TextBox](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/textbox.py)     | `TextBox`   | Text container with position, size, rotation, and font style                 |
 | [Group](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/group.py)         | `Group`     | A group of multiple shapes                                                   |
@@ -148,24 +150,52 @@ Arc(
 * `stroke`: optional `StrokeStyle` for the border
 
 
+### Arch
+
+A ring-shaped arc defined by the bounding box, thickness, and angular range. It is based on PowerPoint’s `blockArc` shape.
+
+```python
+Arch(
+    x=5, y=5,           # center (cm)
+    width=3, height=3,  # sizes (cm)
+    thickness=1,        # ring thickness (cm)
+    start_angle=0,      # start angle (degrees)
+    end_angle=270,      # end angle (degrees)
+    angle=45,           # optional rotation angle (degrees)
+    fill=...,           # optional FillStyle
+    stroke=...          # optional StrokeStyle
+)
+```
+
+#### Parameters
+
+* `x`, `y`: top-left corner coordinates in centimeters
+* `width`, `height`: sizes in centimeters
+* `thickness`: width of the ring (distance between outer and inner radius) in centimeters
+* `start_angle`, `end_angle`: arc range in degrees (default `0` and `180`)
+* `angle`: the rotation angle of the arch in degrees (default is `0`)
+* `fill`: optional `FillStyle` to fill the arch
+* `stroke`: optional `StrokeStyle` for the border
+
+
 ### Ellipse
 
-An ellipse is defined by its top-left corner and the diameters in horizontal and vertical directions. It can be rotated by a given angle.
+An ellipse is defined by its top-left corner and its width and height. It can be rotated by a given angle.
 
 ```python
 Ellipse(
-    x=2, y=3.5, # top-left angle (cm)
-    dx=4, dy=6, # diameters (cm)
-    angle=30,   # optional rotation angle (degrees)
-    fill=...,   # optional FillStyle
-    stroke=...  # optional StrokeStyle
+    x=2, y=3.5,        # top-left angle (cm)
+    width=4, height=6, # sizes (cm)
+    angle=30,          # optional rotation angle (degrees)
+    fill=...,          # optional FillStyle
+    stroke=...         # optional StrokeStyle
 )
 ```
 
 #### Parameters
 * `x`, `y`: top-left corner coordinates in centimeters
-* `dx`, `dy`: diameters in centimeters
-* `angle`: the rotation angle of the ellipse in degrees (default is `0`).
+* `width`, `height`: sizes in centimeters
+* `angle`: the rotation angle of the ellipse in degrees (default is `0`)
 * `fill`: optional `FillStyle` to fill the ellipse
 * `stroke`: optional `StrokeStyle` for the border
 
@@ -191,6 +221,33 @@ Rectangle(
 * `angle`: the rotation angle of the rectangle in degrees (default is `0`)
 * `fill`: fill style
 * `stroke`: stroke style
+
+
+### Pie
+
+A filled sector of an ellipse, defined by its bounding box and angular range.
+
+```python
+Pie(
+    x=5, y=5,           # center (cm)
+    width=3, height=3,  # sizes (cm)
+    start_angle=0,      # start angle (degrees)
+    end_angle=270,      # end angle (degrees)
+    angle=45,           # optional rotation angle (degrees)
+    fill=...,           # optional FillStyle
+    stroke=...          # optional StrokeStyle
+)
+```
+
+#### Parameters
+
+* `x`, `y`: top-left corner coordinates in centimeters
+* `width`, `height`: sizes in centimeters
+* `start_angle`, `end_angle`: the angular range of the slice in degrees (default `0` and `180`)
+* `angle`: the rotation angle of the pie in degrees (default is `0`)
+* `fill`: optional `FillStyle` to fill the arch
+* `stroke`: optional `StrokeStyle` for the border
+
 
 ### Polygon
 
@@ -438,6 +495,16 @@ This example demonstrates how to use different font families and styles in `Text
 ![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/text_boxes.png)
 
 Download .pptx: [examples/text_boxes.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.pptx)
+
+
+### Example 6. Donut charts example
+
+This example demonstrates how to use `DonutChart` from `charts` module
+([examples/charts/donut_chart.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/donut_chart.py)).
+
+![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/donut_chart.png)
+
+Download .pptx: [examples/charts/donut_chart.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/donut_chart.pptx)
 
 
 ## Changelog

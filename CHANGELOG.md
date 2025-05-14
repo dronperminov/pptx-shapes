@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.0 (2025-05-15)
+
+### Added
+- New shape `Arch`: a `blockArc`-like ring with configurable thickness, and angular range.
+- New shape `Pie`: a filled sector of a circle.
+- New module: `charts` with initial support for `DonutChart`, a circular chart with customizable radii, gaps, and total value label.
+- New example: `charts/donut_chart.py` showcasing `DonutChart` usage
+
+### Changed
+- `Ellipse` now uses `width` and `height` instead of `dx` and `dy` for clarity and consistency.
+
+### Fixed
+- Minor internal refactoring for better consistency of shape parameter naming.
+
+
 ## 0.1.4 (2025-05-14)
 
 - Added `family` field to `FontStyle` for specifying font family (default: `"Calibri"`)

@@ -1,4 +1,3 @@
-import math
 from dataclasses import dataclass
 from typing import Optional
 
@@ -47,15 +46,4 @@ class Arc(Shape):
         return node
 
     def bbox(self) -> BBox:
-        if self.angle == 0:
-            return BBox(x=self.x, y=self.y, width=self.width, height=self.height)
-
-        cx, cy = self.x + self.width / 2, self.y + self.height / 2
-        r = self.angle / 180 * math.pi
-        t1 = math.atan(-self.height / self.width * math.tan(r))
-        t2 = math.atan(self.height / self.width / math.tan(r))
-
-        w = self.width * math.cos(t1) * math.cos(r) - self.height * math.sin(t1) * math.sin(r)
-        h = -self.height * math.sin(t2) * math.cos(r) - self.width * math.cos(t2) * math.sin(r)
-
-        return BBox(x=cx - w / 2, y=cy - h / 2, width=w, height=h)
+        return BBox.from_rect(x=self.x, y=self.y, width=self.width, height=self.height, angle=self.angle)

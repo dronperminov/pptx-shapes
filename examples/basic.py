@@ -18,7 +18,7 @@ def main() -> None:
         ))
 
         # ellipses
-        presentation.add(shape=Ellipse(x=20, y=2, dx=4, dy=4, fill=FillStyle(color="#7699d4")))
+        presentation.add(shape=Ellipse(x=20, y=2, width=4, height=4, fill=FillStyle(color="#7699d4")))
 
         # arrows
         presentation.add(shape=Arrow(x1=10, y1=9, x2=14, y2=11, start_type=ArrowType.OVAL, end_type=ArrowType.ARROW, stroke=StrokeStyle(thickness=2)))
@@ -61,9 +61,9 @@ def main() -> None:
         ]))
 
         presentation.add(shape=Group(shapes=[
-            Ellipse(x=4.5, y=6.0, dx=2.0, dy=3.5, fill=FillStyle(color="#dd7373", opacity=0.5), stroke=StrokeStyle(color="black", thickness=2, opacity=0.75)),
-            Ellipse(x=3.0, y=8.5, dx=3.5, dy=2.0, fill=FillStyle(color="#dd7373", opacity=0.25), stroke=StrokeStyle(color="black", opacity=0.25), angle=-45),
-            Ellipse(x=5.0, y=8.5, dx=3.5, dy=2.0, fill=FillStyle(color="#dd7373", opacity=0.85), stroke=StrokeStyle(color="black", opacity=0.85), angle=45)
+            Ellipse(x=4.5, y=6.0, width=2.0, height=3.5, fill=FillStyle(color="#dd7373", opacity=0.5), stroke=StrokeStyle(color="black", thickness=2, opacity=0.75)),
+            Ellipse(x=3.0, y=8.5, width=3.5, height=2.0, fill=FillStyle(color="#dd7373", opacity=0.25), stroke=StrokeStyle(color="black", opacity=0.25), angle=-45),
+            Ellipse(x=5.0, y=8.5, width=3.5, height=2.0, fill=FillStyle(color="#dd7373", opacity=0.85), stroke=StrokeStyle(color="black", opacity=0.85), angle=45)
         ]))
 
         presentation.add(shape=Group(shapes=[

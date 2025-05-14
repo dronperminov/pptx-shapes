@@ -1,4 +1,3 @@
-import math
 from dataclasses import dataclass
 from typing import Optional
 
@@ -53,24 +52,7 @@ class TextBox(Shape):
         return node
 
     def bbox(self) -> BBox:
-        if self.angle == 0:
-            return BBox(x=self.x, y=self.y, width=self.width, height=self.height)
-
-        cx, cy = self.x + self.width / 2, self.y + self.height / 2
-        angle = self.angle / 180 * math.pi
-        x_min = x_max = cx
-        y_min = y_max = cy
-
-        for px, py in [(self.x, self.y), (self.x + self.width, self.y), (self.x + self.width, self.y + self.height), (self.x, self.y + self.height)]:
-            dx, dy = px - cx, py - cy
-
-            x = cx + dx * math.cos(angle) - dy * math.sin(angle)
-            y = cy + dx * math.sin(angle) + dy * math.cos(angle)
-
-            x_min, y_min = min(x_min, x), min(y_min, y)
-            x_max, y_max = max(x_max, x), max(y_max, y)
-
-        return BBox(x=x_min, y=y_min, width=x_max - x_min, height=y_max - y_min)
+        return BBox.from_rect(x=self.x, y=self.y, width=self.width, height=self.height, angle=self.angle)
 
     def __make_body(self, ns_helper: NamespaceHelper, node: etree.Element) -> etree.Element:
         tx_body = ns_helper.element("p:txBody", parent=node)
