@@ -72,14 +72,10 @@ class TextBox(Shape):
 
         return BBox(x=x_min, y=y_min, width=x_max - x_min, height=y_max - y_min)
 
-    def __get_alignment(self, alignment: str) -> str:
-        alignment2pptx = {"center": "ctr", "left": "l", "right": "r", "top": "t", "bottom": "b"}
-        return alignment2pptx[alignment]
-
     def __make_body(self, ns_helper: NamespaceHelper, node: etree.Element) -> etree.Element:
         tx_body = ns_helper.element("p:txBody", parent=node)
         body_attributes = {
-            "anchor": self.__get_alignment(self.style.vertical_align),
+            "anchor": self.style.vertical_align.value,
             "anchorCtr": "0",
             "rtlCol": "0",
             "wrap": "square",
@@ -98,7 +94,7 @@ class TextBox(Shape):
 
         for paragraph in self.text.split("\n"):
             p = ns_helper.element("a:p", parent=body)
-            ns_helper.element("a:pPr", {"algn": self.__get_alignment(self.style.align)}, parent=p)
+            ns_helper.element("a:pPr", {"algn": self.style.align.value}, parent=p)
             r = ns_helper.element("a:r", parent=p)
             rpr = ns_helper.element("a:rPr", {"smtClean": "0", **text_attributes}, parent=r)
 

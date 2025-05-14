@@ -54,14 +54,55 @@ with Presentation(presentation_path="empty.pptx") as presentation:
 
 Currently, `pptx-shapes` supports the following geometric shapes:
 
-| Shape                                                                                               | Class       | Description                                                                  |
-|-----------------------------------------------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| [Ellipse](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/ellipse.py)    | `Ellipse`   | Ellipse defined by top-left corner, diameters, and rotation angle            |
-| [Line](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/line.py)          | `Line`      | Straight line between two points                                             |
-| [Rectange](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/rectangle.py) | `Rectangle` | Rectangle defined by top-left corner, size, corner radius and rotation angle |
-| [Polygon](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polygon.py)    | `Polygon`   | Arbitrary polygon defined by a list of points and rotation angle             |
-| [TextBox](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/textbox.py)    | `TextBox`   | Text container with position, size, rotation, and font style                 |
-| [Group](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/group.py)        | `Group`     | A group of multiple shapes                                                   |
+| Shape                                                                                                | Class       | Description                                                                  |
+|------------------------------------------------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
+| [Line](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/line.py)           | `Line`      | Straight line between two points                                             |
+| [Arrow](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arrow.py)         | `Arrow`     | Straight arrow between two points                                            |
+| [Ellipse](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/ellipse.py)     | `Ellipse`   | Ellipse defined by top-left corner, diameters, and rotation angle            |
+| [Rectangle](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/rectangle.py) | `Rectangle` | Rectangle defined by top-left corner, size, corner radius and rotation angle |
+| [Polygon](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polygon.py)     | `Polygon`   | Arbitrary polygon defined by a list of points and rotation angle             |
+| [TextBox](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/textbox.py)     | `TextBox`   | Text container with position, size, rotation, and font style                 |
+| [Group](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/group.py)         | `Group`     | A group of multiple shapes                                                   |
+
+
+### Line
+
+A straight line connecting two points.
+
+```python
+Line(
+    x1=0.5, y1=1, # start point (cm)
+    x2=1.5, y2=5, # end point (cm)
+    stroke=...    # StrokeStyle
+)
+```
+
+#### Parameters
+* `x1`, `y1`: coordinates for the start point
+* `x2`, `y2`: coordinates for the end point
+* `stroke`: `StrokeStyle` for the stroke
+
+
+### Arrow
+
+A straight arrow connecting two points.
+
+```python
+Arrow(
+    x1=0.5, y1=1,                  # start point (cm)
+    x2=1.5, y2=5,                  # end point (cm)
+    arrow_type=ArrowType.TRIANGLE, # type of arrow
+    stroke=...                     # StrokeStyle
+)
+```
+
+#### Parameters
+* `x1`, `y1`: coordinates for the start point
+* `x2`, `y2`: coordinates for the end point
+* `arrow_type`: type of arrow (`triangle` / `arrow`)
+* `stroke`: `StrokeStyle` for the stroke
+
+
 
 ### Ellipse
 
@@ -84,23 +125,6 @@ Ellipse(
 * `fill`: optional `FillStyle` to fill the ellipse
 * `stroke`: optional `StrokeStyle` for the border
 
-
-### Line
-
-A straight line connecting two points.
-
-```python
-Line(
-    x1=0.5, y1=1, # start point (cm)
-    x2=1.5, y2=5, # end point (cm)
-    stroke=...    # optional StrokeStyle
-)
-```
-
-#### Parameters
-* `x1`, `y1`: coordinates for the start point
-* `x2`, `y2`: coordinates for the end point
-* `stroke`: optional `StrokeStyle` for the stroke
 
 ### Rectangle
 A rectangle is defined by its top-left corner and its width and height. Like the ellipse, it can be rotated by a specific angle.
@@ -222,7 +246,7 @@ StrokeStyle(
     color="#7699d4", # hex, rgb or named color
     thickness=1,     # width in pt
     opacity=1,
-    dash="solid"
+    dash=LineDash.SOLID
 )
 ```
 
@@ -234,8 +258,8 @@ Defines the font style for text shape (`TextBox`). This includes font size, colo
 FontStyle(
     size=14,
     color="#000000",
-    align="center",
-    vertical_align="center"
+    align=Align.CENTER,
+    vertical_align=VerticalAlign.CENTER
 )
 ```
 
