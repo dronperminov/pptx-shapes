@@ -6,7 +6,7 @@
 
 Python library for adding basic geometric shapes directly to PowerPoint (.pptx) slides by editing the XML structure.
 
-![Example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.png)
+![Example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
 
 ## Features
 
@@ -59,6 +59,7 @@ Currently, `pptx-shapes` supports the following geometric shapes:
 |------------------------------------------------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
 | [Line](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/line.py)           | `Line`      | Straight line between two points                                             |
 | [Arrow](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arrow.py)         | `Arrow`     | Straight arrow between two points                                            |
+| [Arc](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/arc.py)             | `Arc`       | Curved segment defined by the bounding box and start/end angles.             |
 | [Ellipse](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/ellipse.py)     | `Ellipse`   | Ellipse defined by top-left corner, diameters, and rotation angle            |
 | [Rectangle](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/rectangle.py) | `Rectangle` | Rectangle defined by top-left corner, size, corner radius and rotation angle |
 | [Polygon](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polygon.py)     | `Polygon`   | Arbitrary polygon defined by a list of points and rotation angle             |
@@ -105,6 +106,31 @@ Arrow(
 * `end_type`: `ArrowType` of arrow at the end point
 * `stroke`: `StrokeStyle` for the stroke
 
+
+### Arc
+
+Draws a curved segment defined by the bounding box and start/end angles.
+
+```python
+Arc(
+    x=24, y=9,          # top-left angle (cm)
+    width=5, height=8,  # diameters (cm)
+    start_angle=90,     # start angle of the arc (degrees)
+    end_angle=270,      # end angle of the arc (degrees)
+    angle=30,           # optional rotation angle (degrees)
+    fill=...,           # optional FillStyle
+    stroke=...          # optional StrokeStyle
+)
+```
+
+#### Parameters
+* `x`, `y`: top-left corner of the bounding box in centimeters
+* `width`, `height`: width and height of the bounding box in centimeters
+* `start_angle`: start angle of the arc (in degrees, default `0`)
+* `end_angle`: end angle of the arc (in degrees, default `180`)
+* `angle`: the rotation angle of the arc in degrees (default is `0`).
+* `fill`: optional `FillStyle` to fill the arc
+* `stroke`: optional `StrokeStyle` for the border
 
 
 ### Ellipse
@@ -353,7 +379,7 @@ All examples include screenshots, downloadable .pptx files, and links to the cor
 A simple demonstration of how to draw basic geometric elements — lines, ellipses, rectangles, polygons, arrows and text — on a blank slide
 ([examples/basic.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.py)).
 
-![Basic slide](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.png)
+![Basic slide](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
 
 Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.pptx)
 
@@ -363,7 +389,7 @@ Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shape
 This example shows how to render a scatter plot using ellipses as data points, demonstrating precise positioning and styling
 ([examples/scatter.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.png)
+![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/scatter.png)
 
 Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.pptx)
 
@@ -373,7 +399,7 @@ Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-sha
 Bar-style visualizations built using rectangles — this example illustrates how to construct a histogram layout with custom colors
 ([examples/histogram.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.png)
+![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/histograms.png)
 
 Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.pptx)
 
@@ -383,7 +409,7 @@ Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-s
 A more advanced use case — splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
 ([examples/polygons.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.png)
+![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/polygons.png)
 
 Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
 

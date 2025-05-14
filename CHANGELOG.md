@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 (2025-05-14)
+
+### Added
+- New shape: `Arc` with support for rotation, bounding box size, and start/end angles
+
+
 ## 0.1.2 (2025-05-14)
 
 ### Added
