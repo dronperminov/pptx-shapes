@@ -2,9 +2,11 @@
 
 [![PyPI version](https://badge.fury.io/py/pptx-shapes.svg)](https://pypi.org/project/pptx-shapes/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![CI tests](https://github.com/dronperminov/pptx-shapes/workflows/CI/badge.svg)](https://github.com/dronperminov/pptx-shapes/actions)
 
 Python library for adding basic geometric shapes directly to PowerPoint (.pptx) slides by editing the XML structure.
 
+![Example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.png)
 
 ## Features
 
@@ -88,17 +90,19 @@ A straight arrow connecting two points.
 
 ```python
 Arrow(
-    x1=0.5, y1=1,                  # start point (cm)
-    x2=1.5, y2=5,                  # end point (cm)
-    arrow_type=ArrowType.TRIANGLE, # type of arrow
-    stroke=...                     # StrokeStyle
+    x1=0.5, y1=1,                 # start point (cm)
+    x2=1.5, y2=5,                 # end point (cm)
+    start_type=ArrowType.NONE,    # type of arrow at the start
+    end_type=ArrowType.TRIANGLE,  # type of arrow at the end
+    stroke=...                    # StrokeStyle
 )
 ```
 
 #### Parameters
 * `x1`, `y1`: coordinates for the start point
 * `x2`, `y2`: coordinates for the end point
-* `arrow_type`: type of arrow (`triangle` / `arrow`)
+* `start_type`: `ArrowType` of arrow at the start point
+* `end_type`: `ArrowType` of arrow at the end point
 * `stroke`: `StrokeStyle` for the stroke
 
 
@@ -224,7 +228,7 @@ Group(shapes=[
 The library provides several classes to define the style and formatting of shapes. These classes help customize the appearance of shapes, including their colors, borders,
 text styling, and margins.
 
-### FillStyle
+### `FillStyle`
 
 Defines the fill color and opacity for a shape. The `FillStyle` class allows you to control the internal color of shapes like rectangles, ellipses, and more.
 
@@ -235,7 +239,7 @@ FillStyle(
 )
 ```
 
-### StrokeStyle
+### `StrokeStyle`
 
 Defines the stroke (outline) of a shape, including its color, thickness, opacity, and line style. Use this class to customize the borders of shapes such as lines, rectangles,
 and ellipses.
@@ -249,7 +253,7 @@ StrokeStyle(
 )
 ```
 
-### FontStyle
+### `FontStyle`
 
 Defines the font style for text shape (`TextBox`). This includes font size, color, and alignments.
 
@@ -262,7 +266,7 @@ FontStyle(
 )
 ```
 
-### FontFormat
+### `FontFormat`
 
 Defines additional text formatting options for font styling. You can use this class to apply bold, italic, underline, or strike-through to text.
 
@@ -275,7 +279,7 @@ FontFormat(
 )
 ```
 
-### Margin
+### `Margin`
 
 Defines the margins inside a `TextBox`. These margins control the inner spacing around the text content.
 
@@ -291,6 +295,53 @@ Margin(
 These formatting classes allow you to fine-tune the appearance of shapes and text on your slides. You can apply custom fills, strokes, fonts, and margins to make the presentation
 visually appealing and precise.
 
+
+## Enums
+
+Several enums are used to standardize alignment, line styles, and arrowheads.
+
+### `Align`
+Horizontal text alignment:
+
+```python
+Align.LEFT     # "l"
+Align.CENTER   # "ctr"
+Align.RIGHT    # "r"
+```
+
+### `VerticalAlign`
+Vertical text alignment:
+
+```python
+VerticalAlign.TOP     # "t"
+VerticalAlign.CENTER  # "ctr"
+VerticalAlign.BOTTOM  # "b"
+```
+
+### `ArrowType`
+Arrowhead style:
+
+```python
+ArrowType.TRIANGLE  # triangle arrowhead
+ArrowType.ARROW     # classic open arrowhead
+ArrowType.DIAMOND   # diamond arrowhead
+ArrowType.OVAL      # oval arrowhead
+ArrowType.NONE      # no arrowhead
+```
+
+### `LineDash`
+Stroke dash style for lines:
+
+```python
+LineDash.SOLID                 # solid line
+LineDash.DASHED                # dashed line
+LineDash.DOTTED                # dotted line
+LineDash.SHORT_DASHED          # short dashes
+LineDash.DASH_DOTTED           # dash-dot pattern
+LineDash.LONG_DASH             # long dashes
+LineDash.LONG_DASH_DOTTED      # long dash-dot
+LineDash.LONG_DASH_DOT_DOTTED  # long dash-dot-dot
+```
 
 ## Examples
 
@@ -335,6 +386,11 @@ A more advanced use case — splitting polygonal shapes by lines. Useful for ill
 ![Slide example](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.png)
 
 Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
+
+
+## Changelog
+
+See [CHANGELOG.md](https://github.com/dronperminov/pptx-shapes/blob/master/CHANGELOG.md) for version history.
 
 
 ## License

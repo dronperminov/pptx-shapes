@@ -15,7 +15,8 @@ class Arrow(Shape):
     y1: float
     x2: float
     y2: float
-    arrow_type: ArrowType = ArrowType.TRIANGLE
+    start_type: ArrowType = ArrowType.NONE
+    end_type: ArrowType = ArrowType.TRIANGLE
     stroke: StrokeStyle = StrokeStyle(color="black")
 
     def to_xml(self, shape_id: int, ns_helper: NamespaceHelper) -> etree.Element:
@@ -34,7 +35,8 @@ class Arrow(Shape):
         ns_helper.element("a:avLst", parent=ns_helper.element("a:prstGeom", {"prst": "straightConnector1"}, parent=sppr))
 
         ln = self.stroke.to_xml(ns_helper)
-        ns_helper.element("a:tailEnd", {"len": "med", "type": self.arrow_type.value, "w": "med"}, ln)
+        ns_helper.element("a:headEnd", {"len": "med", "type": self.start_type.value, "w": "med"}, ln)
+        ns_helper.element("a:tailEnd", {"len": "med", "type": self.end_type.value, "w": "med"}, ln)
         sppr.append(ln)
 
         return node

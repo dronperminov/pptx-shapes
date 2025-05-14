@@ -21,7 +21,7 @@ def main() -> None:
         presentation.add(shape=Ellipse(x=20, y=2, dx=4, dy=4, fill=FillStyle(color="#7699d4")))
 
         # arrows
-        presentation.add(shape=Arrow(x1=10, y1=9, x2=14, y2=11, arrow_type=ArrowType.ARROW, stroke=StrokeStyle(thickness=2)))
+        presentation.add(shape=Arrow(x1=10, y1=9, x2=14, y2=11, start_type=ArrowType.OVAL, end_type=ArrowType.ARROW, stroke=StrokeStyle(thickness=2)))
 
         # rectangles
         presentation.add(shape=Rectangle(
