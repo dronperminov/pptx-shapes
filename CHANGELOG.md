@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.1 (2025-05-15)
+
+### Added
+- New chart type: `BarChart`, including `BarChartConfig`, `BarConfig`, and `LabelConfig`
+- New usage example: a vertical bar chart with monthly data
+- Project documentation published on Read the Docs (available at [pptx-shapes.readthedocs.io](https://pptx-shapes.readthedocs.io/en/latest))
+
+### Changed
+- Refactored default shape configuration: replaced mutable class instances with proper `field(default_factory=...)` usage in dataclasses
+
+
 ## 0.2.0 (2025-05-15)
 
 ### Added
