@@ -7,6 +7,7 @@ from .line import Line
 from .pie import Pie
 from .polygon import Polygon
 from .rectangle import Rectangle
+from .shape import Shape
 from .textbox import TextBox
 
-__all__ = ["Arc", "Arch", "Arrow", "Ellipse", "Group", "Line", "Pie", "Polygon", "Rectangle", "TextBox"]
+__all__ = ["Arc", "Arch", "Arrow", "Ellipse", "Group", "Line", "Pie", "Polygon", "Rectangle", "Shape", "TextBox"]

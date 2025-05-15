@@ -7,5 +7,5 @@ inline-quotes = "
 application-import-names = pptx_shapes
 import-order-style = pycharm
 
-exclude = .git, __pycache__, .idea
+exclude = .git, __pycache__, .idea, docs
 ignore = ANN101
