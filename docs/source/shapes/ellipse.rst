@@ -29,6 +29,10 @@ An ellipse (oval or circle), positioned by its bounding box.
    from pptx_shapes.shapes import Ellipse
    from pptx_shapes.style import FillStyle
 
-   ellipse = Ellipse(x=1, y=1, width=3, height=2, fill=FillStyle(color="blue"))
+   ellipse = Ellipse(
+       x=1, y=1,
+       width=3, height=2,
+       fill=FillStyle(color="blue")
+   )
 
 :ref:`← Back to all shapes <shapes-index>`

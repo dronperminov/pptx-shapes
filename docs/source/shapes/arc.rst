@@ -3,7 +3,7 @@
 Arc
 ===
 
-A arc or rounded arc, positioned by its bounding box.
+A curved segment defined by the bounding box and start/end angles.
 
 .. image:: /_static/shapes/arc.png
    :alt: Arc example
@@ -37,7 +37,8 @@ A arc or rounded arc, positioned by its bounding box.
    from pptx_shapes.style import StrokeStyle
 
    arc = Arc(
-       x=24, y=9, width=5, height=8,
+       x=24, y=9,
+       width=5, height=8,
        start_angle=90, end_angle=270,
        stroke=StrokeStyle(color="#f00", thickness=2.5, dash=LineDash.DASH_DOTTED)
    )

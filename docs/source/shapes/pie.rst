@@ -32,8 +32,10 @@ A filled sector of an ellipse, defined by its bounding box and angular range.
    from pptx_shapes.shapes import Pie
 
    pie = Pie(
-       x=24, y=9, width=5, height=8,
-       start_angle=90, end_angle=270,
+       x=24, y=9,
+       width=5, height=8,
+       start_angle=90,
+       end_angle=270,
        stroke=StrokeStyle(color="#f00", thickness=2.5)
    )
 

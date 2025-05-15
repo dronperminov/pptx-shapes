@@ -30,6 +30,10 @@ A rectangle or rounded rectangle, positioned by its bounding box.
    from pptx_shapes.shapes import Rectangle
    from pptx_shapes.style import FillStyle
 
-   rectangle = Rectangle(x=1, y=1, width=3, height=2, fill=FillStyle(color="#00aff0"))
+   rectangle = Rectangle(
+       x=1, y=1,
+       width=3, height=2,
+       fill=FillStyle(color="#00aff0")
+   )
 
 :ref:`← Back to all shapes <shapes-index>`

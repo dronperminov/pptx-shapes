@@ -29,6 +29,12 @@ A straight arrow connecting two points.
    from pptx_shapes.shapes import Arrow
    from pptx_shapes.style import StrokeStyle
 
-   Arrow(x1=10, y1=9, x2=14, y2=11, start_type=ArrowType.OVAL, end_type=ArrowType.ARROW, stroke=StrokeStyle(thickness=2))
+   arrow = Arrow(
+       x1=10, y1=9,
+       x2=14, y2=11,
+       start_type=ArrowType.OVAL,
+       end_type=ArrowType.ARROW,
+       stroke=StrokeStyle(thickness=2)
+   )
 
 :ref:`← Back to all shapes <shapes-index>`

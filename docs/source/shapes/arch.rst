@@ -34,7 +34,8 @@ A ring-shaped arc defined by the bounding box, thickness, and angular range. It 
    from pptx_shapes.style import StrokeStyle
 
    arch = Arch(
-       x=24, y=9, width=5, height=8,
+       x=24, y=9,
+       width=5, height=8,
        thickness=2,
        start_angle=90, end_angle=270,
        stroke=StrokeStyle(color="#f00", thickness=2.5, dash=LineDash.DASH_DOTTED)

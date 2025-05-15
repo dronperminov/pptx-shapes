@@ -27,6 +27,10 @@ A straight line connecting two points.
    from pptx_shapes.shapes import Line
    from pptx_shapes.style import StrokeStyle
 
-   Line(x1=13, y1=1, x2=1, y2=6, stroke=StrokeStyle(thickness=2, color="#89dd73"))
+   line = Line(
+       x1=13, y1=1,
+       x2=1, y2=6,
+       stroke=StrokeStyle(thickness=2, color="#89dd73")
+   )
 
 :ref:`← Back to all shapes <shapes-index>`
