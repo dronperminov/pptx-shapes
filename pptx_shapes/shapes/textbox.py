@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 from lxml import etree
@@ -21,9 +21,9 @@ class TextBox(Shape):
     width: float
     height: float
     text: str
-    style: FontStyle = FontStyle()
-    formatting: FontFormat = FontFormat()
-    margin: Margin = Margin(left=0, right=0, top=0, bottom=0)
+    style: FontStyle = field(default_factory=lambda: FontStyle())
+    formatting: FontFormat = field(default_factory=lambda: FontFormat())
+    margin: Margin = field(default_factory=lambda: Margin(left=0, right=0, top=0, bottom=0))
     auto_fit: bool = False
     angle: float = 0
     fill: Optional[FillStyle] = None

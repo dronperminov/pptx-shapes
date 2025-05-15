@@ -1,3 +1,3 @@
-from pptx_shapes.charts import donut
+from pptx_shapes.charts import bar, donut
 
-__all__ = ["donut"]
+__all__ = ["bar", "donut"]

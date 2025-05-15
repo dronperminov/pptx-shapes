@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from lxml import etree
 
@@ -14,7 +14,7 @@ class Line(Shape):
     y1: float
     x2: float
     y2: float
-    stroke: StrokeStyle = StrokeStyle(color="black")
+    stroke: StrokeStyle = field(default_factory=lambda: StrokeStyle(color="black"))
 
     def to_xml(self, shape_id: int, ns_helper: NamespaceHelper) -> etree.Element:
         node = ns_helper.element("p:cxnSp")

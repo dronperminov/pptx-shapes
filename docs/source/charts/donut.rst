@@ -15,14 +15,14 @@ It automatically creates a group of shapes including slices and total value labe
    :align: center
 
 Configuration
-=============
+-------------
 
 The appearance and layout of a donut chart can be customized using the following configuration dataclasses:
 
 .. currentmodule:: pptx_shapes.charts.donut.config
 
 GapConfig
----------
+~~~~~~~~~
 
 .. autoclass:: GapConfig
    :noindex:
@@ -34,7 +34,7 @@ Controls the spacing between adjacent slices of the donut.
 - ``thickness`` (`float`) – the thickness of the gap between slices, in pt units, default: ``1``.
 - ``color`` (`str`) – the fill color of the gap area, default: ``white``.
 
-Example:
+**Example:**
 
 .. code-block:: python
 
@@ -44,7 +44,7 @@ Example:
     )
 
 LabelConfig
------------
+~~~~~~~~~~~
 
 .. autoclass:: LabelConfig
    :noindex:
@@ -53,12 +53,12 @@ Defines the style of the central text label that displays the total sum value in
 
 **Attributes:**
 
-- ``size` (`int`) – font size of the central label. Default: ``20``.
+- ``size` (`int`) – font size of the central label, default: ``20``.
 - ``color`` (`str`) – text color, default: ``"#222222"``.
 - ``family`` (`str`) – font family used for the central label, default: ``"Calibri"``.
 - ``bold`` (`bool`) – whether the central label is rendered in bold, default: ``True``.
 
-Example:
+**Example:**
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ Example:
     )
 
 DonutChartConfig
-----------------
+~~~~~~~~~~~~~~~~
 
 .. autoclass:: DonutChartConfig
    :noindex:

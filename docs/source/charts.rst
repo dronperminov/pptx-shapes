@@ -10,8 +10,11 @@ The ``pptx_shapes.charts`` module provides classes for adding simple charts to P
      - Description
    * - :doc:`charts/donut`
      - a donut chart (also known as a ring chart)
+   * - :doc:`charts/bar`
+     - a bar chart
 
 .. toctree::
    :hidden:
 
    charts/donut
+   charts/bar
