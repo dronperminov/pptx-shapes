@@ -104,3 +104,4 @@ Each shape supports style customization (e.g., stroke, fill, angle). See :doc:`s
 
    examples/basic
    examples/text_boxes
+   examples/polygons

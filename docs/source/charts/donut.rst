@@ -3,7 +3,7 @@
 Donut chart
 ===========
 
-The :class:`DonutChart` class allows adding a donut chart (also known as a ring chart) to a presentation slide.
+The ``DonutChart`` class allows adding a donut chart (also known as a ring chart) to a presentation slide.
 It automatically creates a group of shapes including slices and total value label, and calculates angles and layout based on the input data.
 
 .. autoclass:: pptx_shapes.charts.donut.DonutChart
@@ -31,8 +31,8 @@ Controls the spacing between adjacent slices of the donut.
 
 **Attributes:**
 
-- ``thickness`` (`float`) — the thickness of the gap between slices, in pt units, default: ``1``.
-- ``color`` (`str`) — the fill color of the gap area, default: ``white``.
+- ``thickness`` (`float`) – the thickness of the gap between slices, in pt units, default: ``1``.
+- ``color`` (`str`) – the fill color of the gap area, default: ``white``.
 
 Example:
 
@@ -53,10 +53,10 @@ Defines the style of the central text label that displays the total sum value in
 
 **Attributes:**
 
-- ``size` (`int`) — font size of the central label. Default: ``20``.
-- ``color`` (`str`) — text color, default: ``"#222222"``.
-- ``family`` (`str`) — font family used for the central label, default: ``"Calibri"``.
-- ``bold`` (`bool`) — whether the central label is rendered in bold, default: ``True``.
+- ``size` (`int`) – font size of the central label. Default: ``20``.
+- ``color`` (`str`) – text color, default: ``"#222222"``.
+- ``family`` (`str`) – font family used for the central label, default: ``"Calibri"``.
+- ``bold`` (`bool`) – whether the central label is rendered in bold, default: ``True``.
 
 Example:
 
@@ -79,11 +79,11 @@ Main configuration object for the donut chart. Includes geometric settings and o
 
 **Attributes:**
 
-- ``inner_radius`` (`float`) — radius of the inner hole of the donut in centimeters, default: ``3``.
-- ``outer_radius`` (`float`) — radius of the outer circle of the donut, default: ``5``.
-- ``start_angle`` (`float`) — starting angle for the first slice (in degrees, clockwise from 3 o’clock), default: ``90``.
-- ``gap`` (`Optional[GapConfig]`) — configuration for slice spacing, default: instance of ``GapConfig``.
-- ``label`` (`Optional[LabelConfig]`) — configuration for the central total sum label, default: instance of ``LabelConfig``.
+- ``inner_radius`` (`float`) – radius of the inner hole of the donut in centimeters, default: ``3``.
+- ``outer_radius`` (`float`) – radius of the outer circle of the donut, default: ``5``.
+- ``start_angle`` (`float`) – starting angle for the first slice (in degrees, clockwise from 3 o’clock), default: ``90``.
+- ``gap`` (`Optional[GapConfig]`) – configuration for slice spacing, default: instance of ``GapConfig``.
+- ``label`` (`Optional[LabelConfig]`) – configuration for the central total sum label, default: instance of ``LabelConfig``.
 
 
 Example usage
