@@ -92,7 +92,7 @@ Full documentation and examples are available at [pptx-shapes.readthedocs.io](ht
 
 ## Examples
 
-The following examples illustrate how to generate PowerPoint slides with various geometric shapes using `python-shapes`.
+The following examples illustrate how to generate PowerPoint slides with various geometric shapes using `pptx-shapes`.
 All examples include screenshots, downloadable .pptx files, and links to the corresponding source code.
 
 ### Example 1. Basic shapes
