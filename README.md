@@ -14,7 +14,7 @@ Python library for adding basic geometric shapes directly to PowerPoint (.pptx) 
 - Add basic shapes (ellipse, line, polygon, etc.) to existing slides
 - Control position, size, fill, stroke, and other styles
 - Simple, expressive API with smart defaults
-- Supports minimalistic charts like donut diagrams
+- Supports minimalistic charts such as donut, bar, scatter charts
 - Work directly with slides XML structure
 - Save result as `.pptx`
 
@@ -86,6 +86,16 @@ Currently, `pptx-shapes` supports the following geometric shapes:
 | [TextBox](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/textbox.py)     | `TextBox`   | Text container with position, size, rotation, and font style                 |
 | [Group](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/group.py)         | `Group`     | A group of multiple shapes                                                   |
 
+## Supported charts
+
+The `pptx_shapes.charts` module provides classes for adding simple charts to PowerPoint presentations using basic shapes.
+
+| Chart                                                                                                 | Class         | Description                                                             |
+|-------------------------------------------------------------------------------------------------------|---------------|-------------------------------------------------------------------------|
+| [Donut](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/charts/donut/chart.py)    | `DonutChart`  | A donut chart used to visualize proportions of categorical data.        |
+| [Bar](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/charts/bar/chart.py)        | `BarChart`    | A bar chart used to display values across categories or time series.    |
+| [Scatter](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/charts/scatter/plot.py) | `ScatterPlot` | A scatter plot used to visualize a set of points on a coordinate plane. |
+
 ## Documentation
 
 Full documentation and examples are available at [pptx-shapes.readthedocs.io](https://pptx-shapes.readthedocs.io/en/latest)
@@ -145,14 +155,34 @@ This example demonstrates how to use different font families and styles in `Text
 Download .pptx: [examples/text_boxes.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.pptx)
 
 
-### Example 6. Donut charts example
+## Chart examples
 
-This example demonstrates how to use `DonutChart` from `charts` module
+### Example 1. Donut charts
+
+This example demonstrates how to use `DonutChart` from `charts.donut` module
 ([examples/charts/donut_chart.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/donut_chart.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/donut_chart.png)
+![Donut chart example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/donut_chart.png)
 
 Download .pptx: [examples/charts/donut_chart.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/donut_chart.pptx)
+
+### Example 2. Bar chart
+
+This example demonstrates how to use `BarChart` from `charts.bar` module
+([examples/charts/bar_chart.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/bar_chart.py)).
+
+![Bar chart example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/bar_chart.png)
+
+Download .pptx: [examples/charts/bar_chart.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/bar_chart.pptx)
+
+### Example 3. Scatter plot
+
+This example demonstrates how to use `ScatterPlot` from `charts.scatter` module
+([examples/charts/scatter_plot.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/scatter_plot.py)).
+
+![Scatter plot example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/scatter_plot.png)
+
+Download .pptx: [examples/charts/scatter_plot.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/scatter_plot.pptx)
 
 
 ## Changelog

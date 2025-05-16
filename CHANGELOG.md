@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.2 (2025-05-16)
+
+### Added
+- New chart type: `ScatterPlot`, including `ScatterPlotConfig`, `Axes`, `Limits` and `ScatterPoint`
+- New usage example: a scatter plot diagram with two-class spiral distribution
+
+### Changed
+- `README.md` refactoring: add `charts` module table and examples
+
 ## 0.2.1 (2025-05-15)
 
 ### Added

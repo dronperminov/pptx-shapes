@@ -9,11 +9,11 @@ The ``pptx_shapes.charts`` module provides classes for adding simple charts to P
    * - Chart
      - Description
    * - :doc:`charts/donut`
-     - a donut chart (also known as a ring chart)
+     - A donut chart used to visualize proportions of categorical data.
    * - :doc:`charts/bar`
-     - a bar chart
+     - A bar chart used to display values across categories or time series.
    * - :doc:`charts/scatter`
-     - a 2D scatter plot
+     - A scatter plot used to visualize a set of points on a coordinate plane.
 
 .. toctree::
    :hidden:
