@@ -88,9 +88,11 @@ Supported Shapes
 Each shape supports style customization (e.g., stroke, fill, angle). See :doc:`shapes` for detailed parameters.
 
 
+API Documentation
+-----------------
+
 .. toctree::
    :maxdepth: 2
-   :caption: API Documentation
 
    shapes
    charts
@@ -98,9 +100,11 @@ Each shape supports style customization (e.g., stroke, fill, angle). See :doc:`s
    enums
 
 
+Examples
+--------
+
 .. toctree::
    :maxdepth: 1
-   :caption: Examples
 
    examples/basic
    examples/text_boxes
