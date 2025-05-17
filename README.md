@@ -7,7 +7,7 @@
 
 Python library for adding basic geometric shapes directly to PowerPoint (.pptx) slides by editing the XML structure.
 
-![Example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
+![Example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/main.png)
 
 ## Features
 

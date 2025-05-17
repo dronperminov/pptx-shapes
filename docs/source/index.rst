@@ -3,7 +3,7 @@ pptx-shapes
 
 **pptx-shapes** is a Python library for adding basic geometric shapes directly to PowerPoint (.pptx) slides by editing the underlying XML structure.
 
-.. image:: https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png
+.. image:: https://github.com/dronperminov/pptx-shapes/raw/master/examples/main.png
     :alt: Example usage
     :align: center
 
