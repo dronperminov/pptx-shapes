@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from typing import Optional
 
 from lxml import etree
 
@@ -6,6 +7,7 @@ from pptx_shapes.entities.bbox import BBox
 from pptx_shapes.entities.namespace_helper import NamespaceHelper
 from pptx_shapes.enums import ArrowType
 from pptx_shapes.shapes.shape import Shape
+from pptx_shapes.style.arrowhead import ArrowHead
 from pptx_shapes.style.stroke_style import StrokeStyle
 
 
@@ -15,8 +17,8 @@ class Arrow(Shape):
     y1: float
     x2: float
     y2: float
-    start_type: ArrowType = ArrowType.NONE
-    end_type: ArrowType = ArrowType.TRIANGLE
+    start_head: Optional[ArrowHead] = None
+    end_head: Optional[ArrowHead] = field(default_factory=lambda: ArrowHead(head=ArrowType.TRIANGLE))
     stroke: StrokeStyle = field(default_factory=lambda: StrokeStyle(color="black"))
 
     def to_xml(self, shape_id: int, ns_helper: NamespaceHelper) -> etree.Element:
@@ -35,8 +37,12 @@ class Arrow(Shape):
         ns_helper.element("a:avLst", parent=ns_helper.element("a:prstGeom", {"prst": "straightConnector1"}, parent=sppr))
 
         ln = self.stroke.to_xml(ns_helper)
-        ns_helper.element("a:headEnd", {"len": "med", "type": self.start_type.value, "w": "med"}, ln)
-        ns_helper.element("a:tailEnd", {"len": "med", "type": self.end_type.value, "w": "med"}, ln)
+        if self.start_head is not None:
+            ns_helper.element("a:headEnd", self.start_head.to_pptx(), ln)
+
+        if self.end_head:
+            ns_helper.element("a:tailEnd", self.end_head.to_pptx(), ln)
+
         sppr.append(ln)
 
         return node

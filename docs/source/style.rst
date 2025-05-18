@@ -87,6 +87,24 @@ Margins are specified in centimeters.
 - ``bottom`` (`float`) – bottom margin in cm, default is ``0.1``.
 
 
+.. _arrow-head:
+
+ArrowHead
+---------
+
+.. autoclass:: pptx_shapes.style.ArrowHead
+   :members:
+
+Arrowhead styling options for :ref:`arrows <arrow>`
+
+- ``head`` (:ref:`ArrowType <arrow-type>`) – arrowhead type, default is ``ArrowType.TRIANGLE``.
+- ``length`` (:ref:`ArrowSize <arrow-size>`) – arrowhead length, default is ``ArrowSize.MEDIUM``.
+- ``width`` (:ref:`ArrowSize <arrow-size>`) – arrowhead width, default is ``ArrowSize.MEDIUM``.
+
+.. image:: /_static/style/arrows.png
+   :alt: Arrowheads example
+   :align: center
+
 .. _colors:
 
 Supported color formats

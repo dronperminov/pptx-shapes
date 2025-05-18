@@ -1,7 +1,7 @@
 from pptx_shapes import Presentation
 from pptx_shapes.enums import Align, ArrowType, LineDash, VerticalAlign
 from pptx_shapes.shapes import Arc, Arrow, Ellipse, Group, Line, Polygon, Rectangle, TextBox
-from pptx_shapes.style import FillStyle, FontFormat, FontStyle, StrokeStyle
+from pptx_shapes.style import ArrowHead, FillStyle, FontFormat, FontStyle, StrokeStyle
 
 
 def main() -> None:
@@ -21,7 +21,12 @@ def main() -> None:
         presentation.add(shape=Ellipse(x=20, y=2, width=4, height=4, fill=FillStyle(color="#7699d4")))
 
         # arrows
-        presentation.add(shape=Arrow(x1=10, y1=9, x2=14, y2=11, start_type=ArrowType.OVAL, end_type=ArrowType.ARROW, stroke=StrokeStyle(thickness=2)))
+        presentation.add(shape=Arrow(
+            x1=10, y1=9, x2=14, y2=11,
+            start_head=ArrowHead(head=ArrowType.OVAL),
+            end_head=ArrowHead(head=ArrowType.ARROW),
+            stroke=StrokeStyle(thickness=2)
+        ))
 
         # arcs
         presentation.add(shape=Arc(

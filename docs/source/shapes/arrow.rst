@@ -17,8 +17,8 @@ A straight arrow connecting two points.
 - ``y1`` (`float`) – top position of the start point (in centimeters).
 - ``x2`` (`float`) – left position of the end point (in centimeters).
 - ``y2`` (`float`) – top position of the end point (in centimeters).
-- ``start_type`` (:ref:`ArrowType <arrow-type>`, optional) – arrowhead type at the start point.
-- ``end_type`` (:ref:`ArrowType <arrow-type>`, optional) – arrowhead type at the end point.
+- ``start_head`` (:ref:`ArrowHead <arrow-head>`, optional) – arrowhead at the start point.
+- ``end_head`` (:ref:`ArrowHead <arrow-head>`, optional) – arrowhead at the end point.
 - ``stroke`` (:ref:`StrokeStyle <stroke-style>`, optional) – stroke style.
 
 
@@ -27,13 +27,13 @@ A straight arrow connecting two points.
 .. code-block:: python
 
    from pptx_shapes.shapes import Arrow
-   from pptx_shapes.style import StrokeStyle
+   from pptx_shapes.style import StrokeStyle, ArrowHead
 
    arrow = Arrow(
        x1=10, y1=9,
        x2=14, y2=11,
-       start_type=ArrowType.OVAL,
-       end_type=ArrowType.ARROW,
+       start_head=ArrowHead(head=ArrowType.OVAL),
+       end_head=ArrowHead(head=ArrowType.ARROW),
        stroke=StrokeStyle(thickness=2)
    )
 

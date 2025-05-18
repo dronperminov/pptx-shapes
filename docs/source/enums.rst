@@ -31,13 +31,24 @@ Vertical text alignment:
 
 ArrowType
 ---------
-Arrowhead style for lines:
+Arrowhead style for arrows:
 
 - ``ArrowType.TRIANGLE`` – triangle arrowhead
 - ``ArrowType.ARROW`` – classic open arrowhead
 - ``ArrowType.DIAMOND`` – diamond arrowhead
 - ``ArrowType.OVAL`` – oval arrowhead
 - ``ArrowType.NONE`` – no arrowhead
+
+
+.. _arrow-size:
+
+ArrowSize
+---------
+Arrowhead size (length and width) for arrows
+
+- ``ArrowSize.LONG`` – long arrowhead
+- ``ArrowSize.MEDIUM`` – medium arrowhead
+- ``ArrowSize.SMALL`` – small arrowhead
 
 
 .. _line-dash:
