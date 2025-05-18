@@ -1,3 +1,4 @@
+import colorsys
 import re
 
 
@@ -49,9 +50,17 @@ def parse_color(color: str) -> str:
     if re.fullmatch(r"[\da-f]{6}", color):
         return color
 
-    match = re.fullmatch(r"rgb\s*\(\s*(?P<r>\d{1,3})\s*,\s*(?P<g>\d{1,3})\s*,\s*(?P<b>\d{1,3})\s*\)", color)
+    color = re.sub(r"\s+", "", color)
+
+    match = re.fullmatch(r"rgb\((?P<r>\d{1,3}),(?P<g>\d{1,3}),(?P<b>\d{1,3})\)", color)
     if match:
         r, g, b = min(int(match.group("r")), 255), min(int(match.group("g")), 255), min(int(match.group("b")), 255)
         return f"{r:02X}{g:02X}{b:02X}"
+
+    match = re.fullmatch(r"hsl\((?P<h>\d{1,3}),(?P<s>\d{1,3})%,(?P<l>\d{1,3})%\)", color)
+    if match:
+        hsl = min(int(match.group("h")), 360) / 360, min(int(match.group("s")), 100) / 100, min(int(match.group("l")), 100) / 100
+        r, g, b = colorsys.hls_to_rgb(h=hsl[0], s=hsl[1], l=hsl[2])
+        return f"{int(r * 255):02X}{int(g * 255):02X}{int(b * 255):02X}"
 
     raise ValueError(f'Invalid color format "{color}"')

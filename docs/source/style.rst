@@ -127,11 +127,19 @@ Colors can be specified using one of the following formats:
     Both uppercase and lowercase letters are allowed.
 
 - **RGB functional notation**:
-    You may also use the CSS-like syntax:
+    You may also use the CSS-like syntax: ``rgb(r, g, b)``
 
     - ``"rgb(255, 0, 0)"`` (red)
     - ``"rgb(0, 128, 255)"`` (blue-ish)
 
     Values must be integers between 0 and 255.
+
+- **HSL functional notation**:
+    You may also use the CSS-like syntax: ``hsl(h, s%, l%)``
+
+    - ``"hsl(0, 100%, 50%)"`` (red)
+    - ``"hsl(39, 100%, 50%)"`` (orange)
+
+    Values must be integers, ``h`` between 0 and 360, ``s`` and ``l`` between 0 and 100.
 
 If a color string is invalid or unsupported, an error will be raised at runtime.
