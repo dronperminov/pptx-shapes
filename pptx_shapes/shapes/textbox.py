@@ -76,13 +76,16 @@ class TextBox(Shape):
 
         for paragraph in self.text.split("\n"):
             p = ns_helper.element("a:p", parent=body)
-            ns_helper.element("a:pPr", {"algn": self.style.align.value}, parent=p)
+            ppr = ns_helper.element("a:pPr", {"algn": self.style.align.value}, parent=p)
+            ns_helper.element("a:spcPct", {"val": units.scale_to_unit(self.style.line_spacing)}, parent=ns_helper.element("a:lnSpc", parent=ppr))
+
             r = ns_helper.element("a:r", parent=p)
             rpr = ns_helper.element("a:rPr", {"smtClean": "0", **text_attributes}, parent=r)
+
+            ns_helper.element("a:srgbClr", {"val": units.parse_color(self.style.color)}, parent=ns_helper.element("a:solidFill", parent=rpr))
 
             if self.style.family != "Calibri":
                 ns_helper.element("a:latin", {"typeface": self.style.family}, parent=rpr)
 
-            ns_helper.element("a:srgbClr", {"val": units.parse_color(self.style.color)}, parent=ns_helper.element("a:solidFill", parent=rpr))
             ns_helper.element("a:t", parent=r).text = paragraph
             ns_helper.element("a:endParaRPr", text_attributes, parent=p)

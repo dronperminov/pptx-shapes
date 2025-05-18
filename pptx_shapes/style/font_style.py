@@ -10,3 +10,4 @@ class FontStyle:
     family: str = "Calibri"
     align: Align = Align.CENTER
     vertical_align: VerticalAlign = VerticalAlign.CENTER
+    line_spacing: float = 1.0

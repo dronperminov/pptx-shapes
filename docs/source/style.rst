@@ -15,7 +15,7 @@ FillStyle
 Defines the fill color and opacity for a shape. The ``FillStyle`` class allows you to control the internal color of shapes like rectangles, ellipses, and more.
 
 - ``color`` (`str`) – the fill color (see :ref:`supported color formats <colors>`).
-- ``opacity`` (`float`) – opacity of the fill (number, ``0-1``).
+- ``opacity`` (`float`, optional) – opacity of the fill (number, ``0-1``), default is ``1.0``.
 
 
 .. _stroke-style:
@@ -29,10 +29,10 @@ StrokeStyle
 Defines the stroke (outline) of a shape, including its color, thickness, opacity, and line style.
 Use this class to customize the borders of shapes such as lines, rectangles, and ellipses.
 
-- ``color`` (`str`) – the stroke color (see :ref:`supported color formats <colors>`).
-- ``thickness`` (`float`) – width of the stroke in pt.
-- ``opacity`` (`float`) – opacity of the stroke (number, ``0-1``).
-- ``dash`` (:ref:`LineDash <line-dash>`) – stroke dash style, default ``LineDash.SOLID``.
+- ``color`` (`str`, optional) – the stroke color (see :ref:`supported color formats <colors>`), default is ``black``.
+- ``thickness`` (`float`, optional) – width of the stroke in pt, default is ``1.0``.
+- ``opacity`` (`float`, optional) – opacity of the stroke (number, ``0-1``), default is ``1.0``.
+- ``dash`` (:ref:`LineDash <line-dash>`, optional) – stroke dash style, default is ``LineDash.SOLID``.
 
 
 .. _font-style:
@@ -46,11 +46,12 @@ FontStyle
 Defines the font style for text, including size, font family, color, alignment, and vertical alignment.
 Use this class to customize text appearance inside textboxes and other shape elements.
 
-- ``size`` (`float`) – font size in pt.
-- ``family`` (`str`) – font family name (e.g., ``"Arial"``, ``"Calibri"``).
-- ``color`` (`str`) – font color (see :ref:`supported color formats <colors>`).
-- ``align`` (:ref:`Align <align>`) – horizontal alignment of text. Default is ``Align.CENTER``.
-- ``vertical_align`` (:ref:`VerticalAlign <vertical-align>`) – vertical alignment of text. Default is ``VerticalAlign.CENTER``.
+- ``size`` (`float`, optional) – font size in pt, default is ``14``.
+- ``color`` (`str`, optional) – font color (see :ref:`supported color formats <colors>`), default is ``#000000``.
+- ``family`` (`str`, optional) – font family name (e.g., ``"Arial"``, ``"Calibri"``), default is ``Calibri``.
+- ``align`` (:ref:`Align <align>`, optional) – horizontal alignment of text. Default is ``Align.CENTER``.
+- ``vertical_align`` (:ref:`VerticalAlign <vertical-align>`, optional) – vertical alignment of text. Default is ``VerticalAlign.CENTER``.
+- ``line_spacing`` (`float`, optional) – line spacing. Default is ``1.0``.
 
 
 .. _font-format:
@@ -64,10 +65,10 @@ FontFormat
 Specifies additional formatting options for text, such as bold, italic, underline, and strikethrough.
 Can be used alongside :ref:`FontStyle <font-style>` to control text appearance.
 
-- ``bold`` (`bool`) – whether the text is bold, default is ``False``.
-- ``italic`` (`bool`) – whether the text is italic, default is ``False``.
-- ``underline`` (`bool`) – whether the text is underlined, default is ``False``.
-- ``strike`` (`bool`) – whether the text has a strikethrough, default is ``False``.
+- ``bold`` (`bool`, optional) – whether the text is bold, default is ``False``.
+- ``italic`` (`bool`, optional) – whether the text is italic, default is ``False``.
+- ``underline`` (`bool`, optional) – whether the text is underlined, default is ``False``.
+- ``strike`` (`bool`, optional) – whether the text has a strikethrough, default is ``False``.
 
 
 .. _margin:
@@ -81,10 +82,10 @@ Margin
 Defines internal margins for text container (:ref:`TextBox <textbox>`).
 Margins are specified in centimeters.
 
-- ``left`` (`float`) – left margin in cm, default is ``0.25``.
-- ``right`` (`float`) – right margin in cm, default is ``0.25``.
-- ``top`` (`float`) – top margin in cm, default is ``0.1``.
-- ``bottom`` (`float`) – bottom margin in cm, default is ``0.1``.
+- ``left`` (`float`, optional) – left margin in cm, default is ``0.25``.
+- ``right`` (`float`, optional) – right margin in cm, default is ``0.25``.
+- ``top`` (`float`, optional) – top margin in cm, default is ``0.1``.
+- ``bottom`` (`float`, optional) – bottom margin in cm, default is ``0.1``.
 
 
 .. _arrow-head:
@@ -97,9 +98,9 @@ ArrowHead
 
 Arrowhead styling options for :ref:`arrows <arrow>`
 
-- ``head`` (:ref:`ArrowType <arrow-type>`) – arrowhead type, default is ``ArrowType.TRIANGLE``.
-- ``length`` (:ref:`ArrowSize <arrow-size>`) – arrowhead length, default is ``ArrowSize.MEDIUM``.
-- ``width`` (:ref:`ArrowSize <arrow-size>`) – arrowhead width, default is ``ArrowSize.MEDIUM``.
+- ``head`` (:ref:`ArrowType <arrow-type>`, optional) – arrowhead type, default is ``ArrowType.TRIANGLE``.
+- ``length`` (:ref:`ArrowSize <arrow-size>`, optional) – arrowhead length, default is ``ArrowSize.MEDIUM``.
+- ``width`` (:ref:`ArrowSize <arrow-size>`, optional) – arrowhead width, default is ``ArrowSize.MEDIUM``.
 
 .. image:: /_static/style/arrows.png
    :alt: Arrowheads example

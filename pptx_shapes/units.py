@@ -13,8 +13,12 @@ def pt_to_font(pt: float) -> str:
     return str(round(pt * 100))
 
 
+def scale_to_unit(scale: float) -> str:
+    return str(round(scale * 100000))
+
+
 def fraction_to_unit(fraction: float) -> str:
-    return str(round(max(0.0, min(1.0, fraction)) * 100000))
+    return scale_to_unit(max(0.0, min(1.0, fraction)))
 
 
 def angle_to_unit(angle: float) -> str:

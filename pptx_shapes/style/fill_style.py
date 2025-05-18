@@ -8,7 +8,7 @@ from pptx_shapes.entities.namespace_helper import NamespaceHelper
 
 @dataclass
 class FillStyle:
-    color: str = "transparent"
+    color: str
     opacity: float = 1.0
 
     def to_xml(self, ns_helper: NamespaceHelper) -> etree.Element:
