@@ -110,7 +110,7 @@ All examples include screenshots, downloadable .pptx files, and links to the cor
 A simple demonstration of how to draw basic geometric elements – lines, ellipses, rectangles, polygons, arrows and text – on a blank slide
 ([examples/basic.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.py)).
 
-![Basic slide](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
+![Basic example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/basic.png)
 
 Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.pptx)
 
@@ -120,7 +120,7 @@ Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shape
 This example shows how to render a scatter plot using ellipses as data points, demonstrating precise positioning and styling
 ([examples/scatter.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/scatter.png)
+![Simple scatter example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/scatter.png)
 
 Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.pptx)
 
@@ -130,7 +130,7 @@ Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-sha
 Bar-style visualizations built using rectangles – this example illustrates how to construct a histogram layout with custom colors
 ([examples/histogram.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/histograms.png)
+![Simple histogram example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/histograms.png)
 
 Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.pptx)
 
@@ -140,7 +140,7 @@ Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-s
 A more advanced use case – splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
 ([examples/polygons.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/polygons.png)
+![Polygons split example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/polygons.png)
 
 Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
 
@@ -150,9 +150,19 @@ Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-sh
 This example demonstrates how to use different font families and styles in `TextBox` shapes. It shows how to customize font size, alignment, color, and the font family.
 ([examples/text_boxes.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.py)).
 
-![Slide example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/text_boxes.png)
+![Font styles example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/text_boxes.png)
 
 Download .pptx: [examples/text_boxes.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.pptx)
+
+
+### Example 6. Arrowhead styles
+
+This example demonstrates how to use different arrowhead types for `Arrow` shapes. It shows how to customize head form, length and width of arrowhead.
+([examples/arrows.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/arrows.py)).
+
+![Arrowhead styles example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/arrows.png)
+
+Download .pptx: [examples/arrows.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/arrows.pptx)
 
 
 ## Chart examples

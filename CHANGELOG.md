@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.0 (2025-05-18)
+
+### Added
+- Support for HSL color values in color definitions.
+- New `line_spacing` parameter for `FontStyle` to control vertical spacing between lines.
+- New `ArrowHead` class to configure arrowhead appearance (type, length, and width).
+- Arrow now supports `start_head` and `end_head` parameters instead of `start_type` / `end_type`.
+- New example demonstrating different arrowhead types, lengths, and widths.
+
+### Changed
+- Deprecated `start_type` and `end_type` in `Arrow` in favor of the new ArrowHead-based configuration.
+
+
 ## 0.2.2 (2025-05-16)
 
 ### Added
