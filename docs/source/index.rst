@@ -108,4 +108,5 @@ Examples
 
    examples/basic
    examples/text_boxes
+   examples/fractal
    examples/polygons

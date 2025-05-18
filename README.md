@@ -115,7 +115,18 @@ A simple demonstration of how to draw basic geometric elements – lines, ellips
 Download .pptx: [examples/basic.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/basic.pptx)
 
 
-### Example 2. Scatter plots
+
+### Example 2. Fractal
+
+This example shows how to render a fractal using lines
+([examples/fractal.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/fractal.py)).
+
+![Simple fractal example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/fractal.png)
+
+Download .pptx: [examples/fractal.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/fractal.pptx)
+
+
+### Example 3. Scatter plots
 
 This example shows how to render a scatter plot using ellipses as data points, demonstrating precise positioning and styling
 ([examples/scatter.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.py)).
@@ -125,7 +136,7 @@ This example shows how to render a scatter plot using ellipses as data points, d
 Download .pptx: [examples/scatter.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/scatter.pptx)
 
 
-### Example 3. Histograms
+### Example 4. Histograms
 
 Bar-style visualizations built using rectangles – this example illustrates how to construct a histogram layout with custom colors
 ([examples/histogram.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.py)).
@@ -135,7 +146,7 @@ Bar-style visualizations built using rectangles – this example illustrates how
 Download .pptx: [examples/histogram.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/histograms.pptx)
 
 
-### Example 4. Polygons split
+### Example 5. Polygons split
 
 A more advanced use case – splitting polygonal shapes by lines. Useful for illustrating partitions or segmentations
 ([examples/polygons.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.py)).
@@ -145,7 +156,7 @@ A more advanced use case – splitting polygonal shapes by lines. Useful for ill
 Download .pptx: [examples/polygons.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/polygons.pptx)
 
 
-### Example 5. Font families and text styles
+### Example 6. Font families and text styles
 
 This example demonstrates how to use different font families and styles in `TextBox` shapes. It shows how to customize font size, alignment, color, and the font family.
 ([examples/text_boxes.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.py)).
@@ -155,7 +166,7 @@ This example demonstrates how to use different font families and styles in `Text
 Download .pptx: [examples/text_boxes.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/text_boxes.pptx)
 
 
-### Example 6. Arrowhead styles
+### Example 7. Arrowhead styles
 
 This example demonstrates how to use different arrowhead types for `Arrow` shapes. It shows how to customize head form, length and width of arrowhead.
 ([examples/arrows.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/arrows.py)).
