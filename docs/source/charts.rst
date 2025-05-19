@@ -12,6 +12,8 @@ The ``pptx_shapes.charts`` module provides classes for adding simple charts to P
      - A donut chart used to visualize proportions of categorical data.
    * - :doc:`charts/bar`
      - A bar chart used to display values across categories or time series.
+   * - :doc:`charts/line`
+     - A line chart used to show trends or continuous data over a range.
    * - :doc:`charts/scatter`
      - A scatter plot used to visualize a set of points on a coordinate plane.
 
@@ -20,4 +22,5 @@ The ``pptx_shapes.charts`` module provides classes for adding simple charts to P
 
    charts/donut
    charts/bar
+   charts/line
    charts/scatter

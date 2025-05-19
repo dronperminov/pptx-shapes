@@ -3,7 +3,7 @@
 Polygon
 =======
 
-An polygon (oval or circle), positioned by its bounding box.
+An polygon, positioned by its bounding box.
 
 .. image:: /_static/shapes/polygon.png
    :alt: Polygon example

@@ -82,6 +82,7 @@ Supported Shapes
 - :ref:`Rectangle <rectangle>`
 - :ref:`Pie <pie>`
 - :ref:`Polygon <polygon>`
+- :ref:`Polyline <polyline>`
 - :ref:`TextBox <textBox>`
 - :ref:`Group <group>`
 

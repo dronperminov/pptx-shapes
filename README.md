@@ -1,6 +1,7 @@
 # pptx-shapes
 
 [![PyPI version](https://badge.fury.io/py/pptx-shapes.svg)](https://pypi.org/project/pptx-shapes/)
+[![PyPI downloads](https://pepy.tech/badge/pptx-shapes)](https://pepy.tech/project/pptx-shapes)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 [![Documentation Status](https://readthedocs.org/projects/pptx-shapes/badge/?version=latest)](https://pptx-shapes.readthedocs.io/en/latest)
 [![CI tests](https://github.com/dronperminov/pptx-shapes/workflows/CI/badge.svg)](https://github.com/dronperminov/pptx-shapes/actions)
@@ -83,6 +84,7 @@ Currently, `pptx-shapes` supports the following geometric shapes:
 | [Rectangle](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/rectangle.py) | `Rectangle` | Rectangle defined by top-left corner, size, corner radius and rotation angle |
 | [Pie](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/pie.py)             | `Pie`       | Filled sector of a circle, defined by the bounding box and start/end angles  |
 | [Polygon](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polygon.py)     | `Polygon`   | Arbitrary polygon defined by a list of points and rotation angle             |
+| [Polyline](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/polyline.py)   | `Polyline`  | Arbitrary polyline defined by a list of points and rotation angle            |
 | [TextBox](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/textbox.py)     | `TextBox`   | Text container with position, size, rotation, and font style                 |
 | [Group](https://github.com/dronperminov/pptx-shapes/blob/master/pptx_shapes/shapes/group.py)         | `Group`     | A group of multiple shapes                                                   |
 
@@ -196,7 +198,17 @@ This example demonstrates how to use `BarChart` from `charts.bar` module
 
 Download .pptx: [examples/charts/bar_chart.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/bar_chart.pptx)
 
-### Example 3. Scatter plot
+### Example 3. Line chart
+
+This example demonstrates how to use `LineChart` from `charts.line` module
+([examples/charts/line_chart.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/line_chart.py)).
+
+![Line chart example](https://github.com/dronperminov/pptx-shapes/raw/master/examples/charts/line_chart.png)
+
+Download .pptx: [examples/charts/line_chart.pptx](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/line_chart.pptx)
+
+
+### Example 4. Scatter plot
 
 This example demonstrates how to use `ScatterPlot` from `charts.scatter` module
 ([examples/charts/scatter_plot.py](https://github.com/dronperminov/pptx-shapes/blob/master/examples/charts/scatter_plot.py)).

@@ -25,7 +25,9 @@ This section describes all supported shape types in **pptx-shapes**.
    * - :doc:`shapes/pie`
      - Pie sector
    * - :doc:`shapes/polygon`
-     - Custom polygon
+     - Arbitrary polygon
+   * - :doc:`shapes/polyline`
+     - Arbitrary polyline
    * - :doc:`shapes/textbox`
      - Text box with formatting
    * - :doc:`shapes/group`
@@ -42,5 +44,6 @@ This section describes all supported shape types in **pptx-shapes**.
    shapes/rectangle
    shapes/pie
    shapes/polygon
+   shapes/polyline
    shapes/textbox
    shapes/group
