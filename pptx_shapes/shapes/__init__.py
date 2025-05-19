@@ -6,8 +6,10 @@ from .group import Group
 from .line import Line
 from .pie import Pie
 from .polygon import Polygon
+from .polyline import Polyline
 from .rectangle import Rectangle
 from .shape import Shape
 from .textbox import TextBox
 
-__all__ = ["Arc", "Arch", "Arrow", "Ellipse", "Group", "Line", "Pie", "Polygon", "Rectangle", "Shape", "TextBox"]
+
+__all__ = ["Arc", "Arch", "Arrow", "Ellipse", "Group", "Line", "Pie", "Polygon", "Polyline", "Rectangle", "Shape", "TextBox"]
