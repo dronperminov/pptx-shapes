@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1 (2025-05-19)
+
+### Added
+- New `Polyline` shape for rendering arbitrary sequences of connected points.
+- New `LineChart` component for visualizing line charts with optional smoothing, markers, and labels.
+- New example demonstrating the usage of LineChart with styled markers and labels.
+
+### Changed
+- Improved documentation for examples of `BarChart` and `ScatterPlot`.
+
 ## 0.3.0 (2025-05-18)
 
 ### Added
